@@ -1,0 +1,64 @@
+﻿@model MVC_Dashboard_Northwind.Models.Product
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+   
+            
+<div class="card-body">
+    <a class="btn btn-warning float-end ms-3" href="/product/addproduct">Add Product</a>
+    
+</div>
+<div class="card-body">
+    <table id="datatablesSimple">
+        <thead>
+            <tr>
+                <th>ProductID</th>
+                <th>ProductName</th>
+                <th>Supplier</th>
+                <th>Category</th>
+                <th>Unit Price</th>
+                <th>UnitsInStock</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in ViewBag.Products)
+            {
+            <tr>
+                <td>@product.ProductID</td>
+
+                <td>@product.ProductName</td>
+                <td>
+                    @if (product.Supplier != null)
+                    {
+                        @product.Supplier.CompanyName
+                    }
+
+                </td>
+                <td>
+                    @if (product.CategoryID != null)
+                    {
+                        @product.Category.CategoryName
+                    }
+
+                </td>
+                <td>@product.UnitPrice</td>
+                <td>@product.UnitsInStock </td>
+                
+                <td>
+                    
+                   
+                    <a href="~/Product/UpdateProduct/@product.ProductID "class="btn btn-xs btn-danger">Update</a>
+                    <a href="~/Product/Delete/@product.ProductID"class="btn btn-xs btn-info">Delete</a>
+                </td>
+
+            </tr>
+            }
+        </tbody>
+        
+    </table>
+</div>
+

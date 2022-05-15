@@ -1,0 +1,39 @@
+﻿@model MVC_Dashboard_Northwind.Models.Product
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card-body">
+    <a class="btn btn-warning float-end ms-3" href="/product/index">Product</a>
+    Product Update
+</div>
+
+<div class="card-body">
+    <form method="post">
+
+        <label>ProductID</label>
+        <input type="text" class="form-control" />
+
+        <label>Product Name</label>
+        <input type="text" class="form-control" />
+
+        <label>Supplier</label>
+        <input type="text" class="form-control" />
+
+        <label>Category</label>
+        <input type="text" class="form-control" />
+
+        <label>Unit Price</label>
+        <input type="text" class="form-control" />
+
+        <label>UnitsInStock</label>
+        <input type="text" class="form-control" />
+        <br />
+
+        <button type="submit">Update Product</button>
+    </form>
+
+</div>

@@ -1,0 +1,29 @@
+﻿@model MVC_Dashboard_Northwind.Models.Order_Detail
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="card-body">
+    <table id="datatablesSimple">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Discount</th>
+                
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Product.ProductName</td>
+                <td>@Model.UnitPrice</td>
+                <td>@Model.Quantity</td>
+                <td>@Model.Discount</td>
+                
+               
+            </tr>
+    </table>
+    </div>

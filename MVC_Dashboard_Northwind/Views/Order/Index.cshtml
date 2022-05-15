@@ -1,0 +1,57 @@
+﻿@model MVC_Dashboard_Northwind.Models.Order
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card-body">
+    <a class="btn btn-warning float-end ms-3" href="/order/addorder">Add Order</a>
+    Order List
+</div>
+<div class="card-body">
+    <table id="datatablesSimple">
+        <thead>
+            <tr>
+                <th>OrderID</th>
+                <th>EmployeeID</th>
+                <th>CustomerID</th>
+                <th>OrderDate</th>
+                <th>RequiredDate</th>
+                <th>ShippedDate</th>
+                <th>ShipVia</th>
+                <th>ShipName</th>
+                <th>ShipAddress</th>
+                <th>ShipCity</th>
+                <th>ShipCountry</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in ViewBag.Orders)
+            {
+            <tr>
+
+                <td>@order.OrderID</td>
+                <td>@order.EmployeeID</td>
+                <td>@order.CustomerID</td>
+                <td>@order.OrderDate</td>
+                <td>@order.RequiredDate</td>
+                <td>@order.ShippedDate</td>
+                <td>@order.ShipVia</td>
+                <td>@order.ShipName</td>
+                <td>@order.ShipAddress</td>
+                <td>@order.ShipCity</td>
+                <td>@order.ShipCountry</td>
+                <td>
+
+                    <a href="~/Order/UpdateOrder/@order.OrderID " class="btn btn-xs btn-danger">Update</a>
+                    <a href="~/Order/Delete/@order.OrderID" class="btn btn-xs btn-info">Delete</a>
+                </td>
+
+            </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

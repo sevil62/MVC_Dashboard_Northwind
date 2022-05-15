@@ -1,0 +1,42 @@
+﻿@model MVC_Dashboard_Northwind.Models.Employee
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card-body">
+    <a class="btn btn-warning float-end ms-3" href="/employee/index">Employee</a>
+    Employee Add
+</div>
+
+<div class="card-body">
+    <form method="post">
+        <label>EmployeeID</label>
+        <input type="text" class="form-control" />
+
+        <label>FirstName</label>
+        <input type="text" class="form-control" />
+
+        <label>LastName</label>
+        <input type="text" class="form-control" />
+
+        <label>Title</label>
+        <input type="text" class="form-control" />
+
+        <label>Address</label>
+        <input type="text" class="form-control" />
+
+        <label>City</label>
+        <input type="text" class="form-control" />
+
+        <label>Country</label>
+        <input type="text" class="form-control" />
+        
+        <br />
+
+        <button type="submit">Add Employee</button>
+    </form>
+
+</div>

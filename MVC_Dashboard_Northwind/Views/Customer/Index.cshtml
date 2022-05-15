@@ -1,0 +1,53 @@
+﻿@model MVC_Dashboard_Northwind.Models.Customer
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card-body">
+    <a class="btn btn-warning float-end ms-3" href="/customer/addcustomer">Add Customer</a>
+    Customer List
+</div>
+<div class="card-body">
+    <table id="datatablesSimple">
+        <thead>
+            <tr>
+                <th>CustomerID</th>
+                <th>CompanyName</th>
+                <th>ContactName</th>
+                <th>Address</th>
+                <th>City</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in ViewBag.Customers)
+            {
+            <tr>
+
+                <td>@customer.CustomerID</td>
+                <td>
+                    @customer.CompanyName
+                </td>
+                <td>
+                    @customer.ContactName
+
+                </td>
+                <td>@customer.Address</td>
+                <td>@customer.City</td>
+
+                <td>
+
+                    <a href="~/Customer/UpdateCustomer/@customer.CustomerID" class="btn btn-xs btn-danger">Update</a>
+                    <a href="~/Customer/Delete/@customer.CustomerID" class="btn btn-xs btn-info">Delete</a>
+                </td>
+
+            </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
