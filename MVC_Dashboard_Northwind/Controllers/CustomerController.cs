@@ -1,4 +1,5 @@
-﻿using MVC_Dashboard_Northwind.Models;
+﻿using MVC_Dashboard_Northwind.CustomFilters;
+using MVC_Dashboard_Northwind.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,8 @@ using System.Web.Mvc;
 
 namespace MVC_Dashboard_Northwind.Controllers
 {
+    [AuthFilter]
+    [AcFilter]
     public class CustomerController : Controller
     {
         NorthwindEntities db = new NorthwindEntities();

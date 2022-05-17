@@ -1,0 +1,36 @@
+﻿@model EmployeeVM
+
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h2>Giriş Yap</h2>
+            </div>
+            <div class="card-body">
+                @if (TempData["error"] != null)
+                {
+                    <h2>@TempData["error"]</h2>
+                }
+                <form method="post">
+                    <div>
+                        <label>FirstName:</label>
+                        @Html.ValidationMessageFor(x => x.FirstName)
+                        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                    </div>
+                    <div>
+                        <label>LastName:</label>
+                        @Html.ValidationMessageFor(x => x.LastName)
+                        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

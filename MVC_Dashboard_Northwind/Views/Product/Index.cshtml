@@ -21,6 +21,7 @@
                 <th>Unit Price</th>
                 <th>UnitsInStock</th>
                 <th></th>
+                <th></th>
 
             </tr>
         </thead>
@@ -47,13 +48,9 @@
                 </td>
                 <td>@product.UnitPrice</td>
                 <td>@product.UnitsInStock </td>
-                
-                <td>
-                    
-                   
-                    <a href="~/Product/UpdateProduct/@product.ProductID "class="btn btn-xs btn-danger">Update</a>
-                    <a href="~/Product/Delete/@product.ProductID"class="btn btn-xs btn-info">Delete</a>
-                </td>
+
+                <td>@Html.ActionLink("Guncelle", "UpdateProduct", new { id = product.ProductID }, new { @class = "btn btn-warning" })</td>
+                <td>@Html.ActionLink("Sil", "DeleteProduct", new { id = product.ProductID }, new { @class = "btn btn-danger" })</td>
 
             </tr>
             }
